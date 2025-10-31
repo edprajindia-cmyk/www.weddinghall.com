@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneClick Weddings & Home Services | All-in-One Solution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #9c27b0;
+            --secondary: #7b1fa2;
+            --accent: #ff9800;
+            --light: #f3e5f5;
+            --dark: #4a148c;
+            --gray: #f5f5f5;
+            --text: #333;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(156, 39, 176, 0.4);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--accent), #ff5722);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(74, 20, 140, 0.85), rgba(74, 20, 140, 0.9)), url('https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .hero {
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        /* Wedding Services Tabs */
+        .wedding-services {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--light) 0%, #e1bee7 100%);
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            gap: 10px;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            background: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tab-btn.active {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .tab-btn:hover:not(.active) {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .wedding-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .wedding-service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .wedding-service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .wedding-service-img {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .wedding-service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .wedding-service-card:hover .wedding-service-img img {
+            transform: scale(1.1);
+        }
+        
+        .wedding-service-content {
+            padding: 20px;
+        }
+        
+        .wedding-service-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .wedding-service-content p {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .wedding-service-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* How It Works - FIXED SECTION */
+        .how-it-works {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--light);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .step:hover {
+            transform: translateY(-10px);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(156, 39, 176, 0.3);
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .step p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Photo Upload Section */
+        .photo-upload {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--light) 0%, #e1bee7 100%);
+        }
+        
+        .upload-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .upload-area {
+            border: 2px dashed var(--primary);
+            border-radius: 10px;
+            padding: 40px 20px;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .upload-area:hover {
+            background-color: rgba(156, 39, 176, 0.05);
+        }
+        
+        .upload-area i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .upload-area p {
+            margin-bottom: 10px;
+        }
+        
+        .upload-area span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        #fileInput {
+            display: none;
+        }
+        
+        .preview-container {
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .preview-img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--accent);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.3;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            border: 3px solid var(--accent);
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark) 0%, #311b92 100%);
+            color: white;
+            padding: 80px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+        
+        .contact-info {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
+            margin-top: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 20px;
+                z-index: 100;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .steps-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo"><i class="fas fa-heart"></i>OneClick<span>Services</span></a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#wedding-services">Wedding Services</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#venues">Venues</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#photo-upload">Upload Photos</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+            
+            <div class="hero">
+                <h1>Your Complete Wedding & Home Solution</h1>
+                <p>OneClick Services brings you everything you need for your perfect wedding and home maintenance in one convenient place. From venues to plumbing, we've got you covered!</p>
+                <div class="hero-btns">
+                    <a href="#booking" class="btn">Book Services Now</a>
+                    <a href="#wedding-services" class="btn btn-secondary">Explore Wedding Services</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Complete Services</h2>
+                <p>Everything you need for your wedding and home in one place - truly a one-click solution</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Marriage Hall">
+                    </div>
+                    <div class="service-content">
+                        <h3>Marriage Hall Booking</h3>
+                        <p>Find and book the perfect venue for your wedding ceremony and reception. We offer a variety of options to suit your style and budget.</p>
+                        <a href="#booking" class="btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Room Rental">
+                    </div>
+                    <div class="service-content">
+                        <h3>Room Rentals</h3>
+                        <p>Looking for temporary accommodation? We have a wide range of rooms and apartments available for short and long-term rentals.</p>
+                        <a href="#booking" class="btn">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Plumbing Services">
+                    </div>
+                    <div class="service-content">
+                        <h3>Plumbing Services</h3>
+                        <p>Professional plumbing services for your home or venue. From minor repairs to major installations, we've got you covered.</p>
+                        <a href="#booking" class="btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wedding Services Tabs Section -->
+    <section class="wedding-services" id="wedding-services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Complete Wedding Services</h2>
+                <p>Everything you need for your perfect wedding day - all in one place</p>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="catering"><i class="fas fa-utensils"></i>Catering</button>
+                <button class="tab-btn" data-tab="car-booking"><i class="fas fa-car"></i>Car Booking</button>
+                <button class="tab-btn" data-tab="decoration"><i class="fas fa-palette"></i>Decoration</button>
+                <button class="tab-btn" data-tab="music"><i class="fas fa-music"></i>Music & Entertainment</button>
+            </div>
+            
+            <div class="tab-content active" id="catering">
+                <div class="wedding-services-grid">
+                    <div class="wedding-service-card">
+                        <div class="wedding-service-img">
+                            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Premium Catering">
+                        </div>
+                        <div class="wedding-service-content">
+                            <h3>Premium Catering</h3>
+                            <p>Exquisite multi-cuisine menu with professional service staff. Perfect for weddings of all sizes.</p>
+                            <div class="wedding-service-price">Starting at ₹500 per plate</div>
+                            <a href="#booking" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="wedding-service-card">
+                        <div class="wedding-service-img">
+                            <img src="https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Traditional Cuisine">
+                        </div>
+                        <div class="wedding-service-content">
+                            <h3>Traditional Cuisine</h3>
+                            <p>Authentic regional dishes prepared by experienced chefs. Customizable menu options available.</p>
+                            <div class="wedding-service-price">Starting at ₹350 per plate</div>
+                            <a href="#booking" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="wedding-service-card">
+                        <div class="wedding-service-img">
+                            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Dessert Services">
+                        </div>
+                        <div class="wedding-service-content">
+                            <h3>Dessert & Sweets</h3>
+                            <p>Specialized dessert counters with live stations for ice cream, jalebi, and traditional sweets.</p>
+                            <div class="wedding-service-price">Starting at ₹200 per person</div>
+                            <a href="#booking" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="car-booking">
+                <div class="wedding-services-grid">
+                    <div class="wedding-service-card">
+                        <div class="wedding-service-img">
+                            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Luxury Cars">
+                        </div>
+                        <div class="wedding-service-content">
+                            <h3>Luxury Cars</h3>
+                            <p>Premium luxury cars for the bride and groom. Includes decorated cars with professional drivers.</p>
+                            <div class="wedding-service-price">Starting at ₹8,000 per day</div>
+                            <a href="#booking" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="wedding-service-card">
+                        <div class="wedding-service-img">
+                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wedding Fleet">
+                        </div>
+                        <div class="wedding-service-content">
+                            <h3>Wedding Fleet</h3>
+                            <p>Complete fleet management for guests. Multiple car options available for different group sizes.</p>
+                            <div class="wedding-service-price">Starting at ₹3,000 per car</div>
+                            <a href="#booking" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="wedding-service-card">
+                        <div class="wedding-service-img">
+                            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Traditional Transport">
+                        </div>
+                        <div class="wedding-service-content">
+                            <h3>Traditional Transport</h3>
+                            <p>Horse carriages, decorated tractors, and other traditional vehicles for a unique wedding experience.</p>
+                            <div class="wedding-service-price">Starting at ₹15,000</div>
+                            <a href="#booking" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="decoration">
+                <div class="wedding-services-grid">
+                    <div class="wedding-service-card">
+                        <div class="wedding-service-img">
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Stage Decoration">
+                        </div>
+                        <div class="wedding-service-content">
+                            <h3>Stage Decoration</h3>
+                            <p>Elegant and customized stage setups with floral arrangements, lighting, and thematic elements.</p>
+                            <div class="wedding-service-price">Starting at ₹25,000</div>
+                            <a href="#booking" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="wedding-service-card">
+                        <div class="wedding-service-img">
+                            <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Venue Decoration">
+                        </div>
+                        <div class="wedding-service-content">
+                            <h3>Venue Decoration</h3>
+                            <p>Complete venue transformation with themed decorations, centerpieces, and ambiance lighting.</p>
+                            <div class="wedding-service-price">Starting at ₹50,000</div>
+                            <a href="#booking" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="wedding-service-card">
+                        <div class="wedding-service-img">
+                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Floral Arrangements">
+                        </div>
+                        <div class="wedding-service-content">
+                            <h3>Floral Arrangements</h3>
+                            <p>Beautiful floral decorations including bouquets, garlands, centerpieces, and entrance decor.</p>
+                            <div class="wedding-service-price">Starting at ₹15,000</div>
+                            <a href="#booking" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="music">
+                <div class="wedding-services-grid">
+                    <div class="wedding-service-card">
+                        <div class="wedding-service-img">
+                            <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Live Band">
+                        </div>
+                        <div class="wedding-service-content">
+                            <h3>Live Band</h3>
+                            <p>Professional live bands specializing in wedding music, Bollywood hits, and traditional performances.</p>
+                            <div class="wedding-service-price">Starting at ₹20,000</div>
+                            <a href="#booking" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="wedding-service-card">
+                        <div class="wedding-service-img">
+                            <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="DJ Services">
+                        </div>
+                        <div class="wedding-service-content">
+                            <h3>DJ Services</h3>
+                            <p>Professional DJs with complete sound systems and lighting for dance floors and entertainment.</p>
+                            <div class="wedding-service-price">Starting at ₹12,000</div>
+                            <a href="#booking" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="wedding-service-card">
+                        <div class="wedding-service-img">
+                            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Traditional Performers">
+                        </div>
+                        <div class="wedding-service-content">
+                            <h3>Traditional Performers</h3>
+                            <p>Dhol players, classical dancers, and other traditional performers for cultural celebrations.</p>
+                            <div class="wedding-service-price">Starting at ₹8,000</div>
+                            <a href="#booking" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section - FIXED -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How OneClick Services Works</h2>
+                <p>Getting all your wedding and home services has never been easier</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Browse Services</h3>
+                    <p>Explore our wide range of wedding and home services all in one place.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Book & Schedule</h3>
+                    <p>Select your preferred services and schedule them according to your needs.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Confirm & Relax</h3>
+                    <p>Our team confirms your bookings and handles everything so you can relax.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Enjoy Your Event</h3>
+                    <p>Sit back and enjoy your perfect wedding day or well-maintained home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Upload Section -->
+    <section class="photo-upload" id="photo-upload">
+        <div class="container">
+            <div class="section-title">
+                <h2>Share Your Experience</h2>
+                <p>Upload photos from your wedding or home service experience with us</p>
+            </div>
+            
+            <div class="upload-container">
+                <h3>Upload Your Photo</h3>
+                <p>Share your special moments with us. Upload photos from your wedding or home service experience.</p>
+                
+                <div class="upload-area" id="uploadArea">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & drop your photo here</p>
+                    <p>or <span>click to browse</span></p>
+                    <input type="file" id="fileInput" accept="image/*">
+                </div>
+                
+                <div class="preview-container" id="previewContainer">
+                    <img src="" alt="Preview" class="preview-img" id="previewImg">
+                    <p>Photo preview</p>
+                    <button class="btn" id="uploadBtn">Upload Photo</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials with Indian Customers -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Indian Customers Say</h2>
+                <p>Read testimonials from our satisfied customers across India</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>Booking our wedding venue through OneClick Services was seamless. The team helped us find the perfect location in Varanasi and handled all the details. Our special day was absolutely perfect!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Priya Sharma">
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Wedding Client, Varanasi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>I needed a temporary apartment in Delhi while my house was being renovated. OneClick Services found me a great place in my budget and the process was so easy. Highly recommended!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Rajesh Kumar">
+                        </div>
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>Room Rental Client, Delhi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>The plumbing service was prompt and professional. They fixed our kitchen leak in Mumbai quickly and at a reasonable price. It's so convenient to have all these services in one place.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Anjali Patel">
+                        </div>
+                        <div class="author-info">
+                            <h4>Anjali Patel</h4>
+                            <p>Plumbing Service Client, Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>OneClick Services</h3>
+                    <p>Your one-stop destination for wedding venues, room rentals, and home services. Making your special moments and everyday life easier.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#wedding-services">Wedding Services</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#venues">Venues</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#photo-upload">Upload Photos</a></li>
+                        <li><a href="#booking">Book Now</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Marriage Hall Booking</a></li>
+                        <li><a href="#">Catering Services</a></li>
+                        <li><a href="#">Car Booking</a></li>
+                        <li><a href="#">Decoration</a></li>
+                        <li><a href="#">Music & Entertainment</a></li>
+                        <li><a href="#">Room Rentals</a></li>
+                        <li><a href="#">Plumbing Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>Candmari, Varanasi, Uttar Pradesh, India</div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>+91 9415888078</div>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>info@oneclickservices.com</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 OneClick Services. All Rights Reserved. | Your Complete Wedding & Home Solution</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Tab Functionality for Wedding Services
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Photo Upload Functionality
+        const uploadArea = document.getElementById('uploadArea');
+        const fileInput = document.getElementById('fileInput');
+        const previewContainer = document.getElementById('previewContainer');
+        const previewImg = document.getElementById('previewImg');
+        const uploadBtn = document.getElementById('uploadBtn');
+        
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        fileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.addEventListener('load', function() {
+                    previewImg.src = reader.result;
+                    previewContainer.style.display = 'block';
+                });
+                
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        uploadBtn.addEventListener('click', function() {
+            alert('Thank you for sharing your photo with us! In a real application, this would upload to our servers.');
+            previewContainer.style.display = 'none';
+            fileInput.value = '';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
